@@ -12,6 +12,7 @@ import UIKit
 enum Token: String {
 
 	/// Токены фонов
+	case backgroundSecondary
 	case background0
 	case background1
 	case background2
@@ -31,9 +32,15 @@ enum Token: String {
 	case autumn2
 	case autumn3
 
-	/// Токены цветов текста
+	/// Токены текста
 	case text
+	case textBrand
+	case textInverse
 	case textSecondary
+
+	/// Токены кнопок
+	case negative
+	case warning
 }
 
 // MARK: - Token Extension
@@ -41,8 +48,5 @@ enum Token: String {
 extension Token {
 
 	/// Динамический цвет
-	var color: UIColor {
-		let systemColor = UIColor(named: self.rawValue)
-		return systemColor ?? .black
-	}
+	var color: UIColor { UIColor(named: self.rawValue) ?? .black }
 }

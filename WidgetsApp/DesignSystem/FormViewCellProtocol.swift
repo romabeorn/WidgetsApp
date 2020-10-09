@@ -9,7 +9,7 @@
 import UIKit
 
 /// Протокол обратной связи ячейки FormView
-protocol FormViewCellDelegate: UITableViewCell {
+protocol FormViewCellProtocol where Self: UITableViewCell {
 
 	/// Передать элемент FormView ячейке Formview
 	/// - Parameter item: Элемент FormView

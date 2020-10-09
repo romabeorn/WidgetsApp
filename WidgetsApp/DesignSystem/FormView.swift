@@ -14,33 +14,28 @@ final class FormView: UITableView {
 	// MARK: - Public Properties
 
 	/// Вью модели ячеек
-	let items: [FormViewItemProtocol]
+	var items: [FormViewItemProtocol] = [] {
+		didSet {
+			updateAppearance()
+		}
+	}
 
 	// MARK: - Private Properties
 
-	private let identifier: String = "formViewCell"
+	private let identifier: String = "defalutCellIdentifier"
 
 	// MARK: - Init
 
-	init(items: [FormViewItemProtocol]) {
-		self.items = items
+	init(items: [FormViewItemProtocol] = []) {
+		defer {
+			self.items = items
+		}
 		super.init(frame: .zero, style: .plain)
 		setupFormView()
 	}
 
 	required init?(coder: NSCoder) {
-		fatalError("Coder Is Not Implemented")
-	}
-
-	// MARK: - Private Methods
-
-	private func setupFormView() {
-		items.forEach { register($0.type, forCellReuseIdentifier: $0.identifier) }
-		separatorStyle = .none
-		delegate = self
-		dataSource = self
-		estimatedRowHeight = 100
-		backgroundColor = Token.background0.color
+		fatalError("init(coder:) is not implemented")
 	}
 }
 
@@ -48,13 +43,9 @@ final class FormView: UITableView {
 
 extension FormView: UITableViewDelegate {
 
-	override var numberOfSections: Int {
-		return 1
-	}
-	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		let item = items[indexPath.row]
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier) as? FormViewCellDelegate else {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier) as? FormViewCellProtocol else {
 			return UITableView.automaticDimension
 		}
 		return cell.height
@@ -71,10 +62,28 @@ extension FormView: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let item = items[indexPath.row]
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier) as? FormViewCellDelegate else {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier) as? FormViewCellProtocol else {
 			return UITableViewCell(style: .default, reuseIdentifier: identifier)
 		}
 		cell.setFormItem(item: item)
 		return cell
+	}
+}
+
+// MARK: - Private
+
+extension FormView {
+
+	private func setupFormView() {
+		separatorStyle = .none
+		delegate = self
+		dataSource = self
+		estimatedRowHeight = .ulpOfOne
+		backgroundColor = .clear
+	}
+
+	private func updateAppearance() {
+		items.forEach { register($0.type, forCellReuseIdentifier: $0.identifier) }
+		self.reloadData()
 	}
 }

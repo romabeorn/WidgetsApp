@@ -15,5 +15,5 @@ protocol FormViewItemProtocol {
 	var identifier: String { get }
 
 	/// Тип ячейки
-	var type: FormViewCellDelegate.Type { get }
+	var type: FormViewCellProtocol.Type { get }
 }

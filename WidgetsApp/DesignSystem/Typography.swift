@@ -36,34 +36,37 @@ enum Typography: String {
 	case headline
 	case headlineSecondary
 	case headlineBrand
+}
+
+extension Typography {
 
 	/// Элемент типографии в зависимости от стиля
 	var item: TypographyItem {
 		switch self {
-			case .footnote:
-				return .init(size: 13, font: .SemiBold, token: .text)
-			case .footnoteSecondary:
-				return .init(size: 13, font: .SemiBold, token: .textSecondary)
-			case .footnoteBrand:
-				return .init(size: 13, font: .SemiBold, token: .smog0)
-			case .body:
-				return .init(size: 15, font: .SemiBold, token: .text)
-			case .bodySecondary:
-				return .init(size: 15, font: .SemiBold, token: .textSecondary)
-			case .bodyBrand:
-				return .init(size: 15, font: .SemiBold, token: .smog0)
-			case .title:
-				return .init(size: 20, font: .Regular, token: .text)
-			case .titleSecondary:
-				return .init(size: 20, font: .Regular, token: .textSecondary)
-			case .titleBrand:
-				return .init(size: 20, font: .Regular, token: .smog0)
-			case .headline:
-				return .init(size: 30, font: .Bold, token: .text)
-			case .headlineSecondary:
-				return .init(size: 30, font: .Bold, token: .textSecondary)
-			case .headlineBrand:
-				return .init(size: 30, font: .Bold, token: .smog0)
+		case .footnote:
+			return .init(size: 13, font: .semiBold, token: .text)
+		case .footnoteSecondary:
+			return .init(size: 13, font: .semiBold, token: .textSecondary)
+		case .footnoteBrand:
+			return .init(size: 13, font: .semiBold, token: .textBrand)
+		case .body:
+			return .init(size: 15, font: .semiBold, token: .text)
+		case .bodySecondary:
+			return .init(size: 15, font: .semiBold, token: .textSecondary)
+		case .bodyBrand:
+			return .init(size: 15, font: .semiBold, token: .textBrand)
+		case .title:
+			return .init(size: 20, font: .regular, token: .text)
+		case .titleSecondary:
+			return .init(size: 20, font: .regular, token: .textSecondary)
+		case .titleBrand:
+			return .init(size: 20, font: .regular, token: .textBrand)
+		case .headline:
+			return .init(size: 30, font: .bold, token: .text)
+		case .headlineSecondary:
+			return .init(size: 30, font: .bold, token: .textSecondary)
+		case .headlineBrand:
+			return .init(size: 30, font: .bold, token: .textBrand)
 		}
 	}
 }

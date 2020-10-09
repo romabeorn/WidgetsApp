@@ -14,16 +14,16 @@ enum Font: String {
 	/// Семейство шрифтов OpenSans
 	static var familyName: String { "OpenSans" }
 
-	case Bold
-	case BoldItalic
-	case ExtraBold
-	case ExtraBoldItalic
-	case Italic
-	case Light
-	case LightItalic
-	case Regular
-	case SemiBold
-	case SemiBoldItalic
+	case bold
+	case boldItalic
+	case extraBold
+	case extraBoldItalic
+	case italic
+	case light
+	case lightItalic
+	case regular
+	case semiBold
+	case semiBoldItalic
 
 	/// Шрифт в зависимости от элемента типографии
 	/// - Parameter item: элемент типографии

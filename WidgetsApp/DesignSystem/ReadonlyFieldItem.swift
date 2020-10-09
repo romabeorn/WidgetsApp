@@ -24,5 +24,5 @@ extension ReadonlyFieldItem: FormViewItemProtocol {
 
 	var identifier: String { "ReadonlyFieldItem" }
 
-	var type: FormViewCellDelegate.Type { ReadonlyFieldCell.self }
+	var type: FormViewCellProtocol.Type { ReadonlyFieldCell.self }
 }

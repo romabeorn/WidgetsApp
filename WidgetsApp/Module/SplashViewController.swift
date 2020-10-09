@@ -19,18 +19,20 @@ final class SplashViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = Token.background0.color
+		view.backgroundColor = Token.backgroundSecondary.color
 		view.addSubview(activityIndicator)
 		activityIndicator.frame = view.bounds
-		activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
 		makeServiceCall()
 	}
+}
 
-	// MARK: - Private Methods
+// MARK: - Private
+
+extension SplashViewController {
 
 	private func makeServiceCall() {
 		activityIndicator.startAnimating()
-		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)) {
 			if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
 				AppDelegate.shared.rootViewController.switchToMainScreen()
 			} else {
