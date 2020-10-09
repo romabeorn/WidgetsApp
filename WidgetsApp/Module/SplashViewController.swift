@@ -32,7 +32,7 @@ extension SplashViewController {
 
 	private func makeServiceCall() {
 		activityIndicator.startAnimating()
-		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(700)) {
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(900)) {
 			if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
 				AppDelegate.shared.rootViewController.switchToMainScreen()
 			} else {
