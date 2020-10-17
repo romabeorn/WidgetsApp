@@ -12,8 +12,6 @@ opt_in_rules:
 excluded: 
   - Carthage
   - Pods
-  - Source/ExcludedFolder
-  - Source/ExcludedFile.swift
 
 included: 
   - WidgetsApp
