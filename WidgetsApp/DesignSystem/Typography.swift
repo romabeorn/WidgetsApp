@@ -24,6 +24,9 @@ struct TypographyItem {
 /// Стиль типографии
 enum Typography: String {
 
+	case caption
+	case captionSecondary
+	case captionBrand
 	case footnote
 	case footnoteSecondary
 	case footnoteBrand
@@ -43,6 +46,12 @@ extension Typography {
 	/// Элемент типографии в зависимости от стиля
 	var item: TypographyItem {
 		switch self {
+		case .caption:
+			return .init(size: 12, font: .semiBold, token: .text)
+		case .captionSecondary:
+			return .init(size: 12, font: .semiBold, token: .textSecondary)
+		case .captionBrand:
+			return .init(size: 12, font: .semiBold, token: .textBrand)
 		case .footnote:
 			return .init(size: 13, font: .semiBold, token: .text)
 		case .footnoteSecondary:

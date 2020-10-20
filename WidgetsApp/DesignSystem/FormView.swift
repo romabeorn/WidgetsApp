@@ -16,7 +16,7 @@ final class FormView: UITableView {
 	/// Вью модели ячеек
 	var items: [FormViewItemProtocol] = [] {
 		didSet {
-			updateAppearance()
+			setupItems()
 		}
 	}
 
@@ -62,9 +62,8 @@ extension FormView: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let item = items[indexPath.row]
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier) as? FormViewCellProtocol else {
-			return UITableViewCell(style: .default, reuseIdentifier: identifier)
-		}
+		let cell = tableView.dequeueReusableCell(withIdentifier: item.identifier) as? FormViewCellProtocol
+			?? item.type.init(style: .default, reuseIdentifier: item.identifier)
 		cell.setFormItem(item: item)
 		return cell
 	}
@@ -82,8 +81,11 @@ extension FormView {
 		backgroundColor = .clear
 	}
 
-	private func updateAppearance() {
+	private func setupItems() {
+		guard Thread.isMainThread else {
+			DispatchQueue.main.sync { self.setupItems() }
+			return
+		}
 		items.forEach { register($0.type, forCellReuseIdentifier: $0.identifier) }
-		reloadData()
 	}
 }

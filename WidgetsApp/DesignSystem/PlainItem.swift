@@ -14,7 +14,7 @@ struct PlainItem {
 	let title: String
 
 	/// подзаговок
-	var subtitle: String?
+	var subtitle: String
 
 	/// Картинка
 	var image: UIImage?
