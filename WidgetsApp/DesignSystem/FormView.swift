@@ -84,6 +84,6 @@ extension FormView {
 
 	private func updateAppearance() {
 		items.forEach { register($0.type, forCellReuseIdentifier: $0.identifier) }
-		self.reloadData()
+		reloadData()
 	}
 }
