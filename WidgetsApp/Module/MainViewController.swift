@@ -42,9 +42,32 @@ extension MainViewController {
 	}
 
 	private func setupItems() -> [FormViewItemProtocol] {
-		let item1 = PlainItem(title: "test", subtitle: "subtitle", image: UIImage(named: "logo"), caption: "hello world")
-
-		return [item1]
+		var items: [FormViewItemProtocol] = []
+		for _ in 0...10 {
+		items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
+							   subtitle: "Студентам и пенсионерам бесплатно"))
+		items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
+							   subtitle: "Студентам и пенсионерам бесплатно",
+							   caption: "Акциая действует только до 2 ноября"))
+		items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
+							   subtitle: "Студентам и пенсионерам бесплатно",
+							   image: UIImage(named: "logo")))
+		items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
+							   subtitle: "Студентам и пенсионерам бесплатно",
+							   caption: ""))
+		items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
+							   subtitle: "Студентам и пенсионерам бесплатно",
+							   caption: ""))
+		items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
+							   subtitle: "Студентам и пенсионерам бесплатно",
+							   image: UIImage(named: "logo"),
+							   caption: ""))
+		items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
+							   subtitle: "Студентам и пенсионерам бесплатно",
+							   image: UIImage(named: "logo"),
+							   caption: ""))
+		}
+		return items
 	}
 
 	private func setupConstraints() {
