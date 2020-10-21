@@ -19,9 +19,9 @@ final class PlainCell: UITableViewCell {
 
 	// MARK: - UI Properties
 
-	private let title = Label(text: "", style: .body)
-	private let subtitle = Label(text: "", style: .footnoteSecondary)
-	private let caption = Label(text: "", style: .captionSecondary)
+	private let title = Label(text: "title", style: .body)
+	private let subtitle = Label(text: "subtitle", style: .footnoteSecondary)
+	private let caption = Label(text: "caption", style: .captionSecondary)
 	private let img: UIImageView = UIImageView()
 	private var divider: UIView = {
 		let view = UIView()
@@ -96,10 +96,12 @@ extension PlainCell {
 			title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.side),
 			titleLeadingAnchor,
 			title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.side),
+			title.heightAnchor.constraint(greaterThanOrEqualToConstant: title.intrinsicContentSize.height),
 
 			subtitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: Constants.main),
 			subtitle.leadingAnchor.constraint(equalTo: title.leadingAnchor),
 			subtitle.trailingAnchor.constraint(equalTo: title.trailingAnchor),
+			subtitle.heightAnchor.constraint(greaterThanOrEqualToConstant: subtitle.intrinsicContentSize.height),
 
 			dividerTopConstraint,
 			divider.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
