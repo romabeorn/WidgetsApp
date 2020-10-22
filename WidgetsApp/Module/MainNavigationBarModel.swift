@@ -8,10 +8,10 @@
 
 import Foundation
 
-/// Модель данных для навбара главного экрана
+/// Модель Navigation Bar модуля
 struct MainNavigationBarModel {
 
-	/// Заголовок
+	/// Заголовок навигационной панели
 	let title: String
 
 	/// Заголовок кнопки

@@ -43,15 +43,16 @@
 		58F18699252FC86F003C4962 /* ButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F18698252FC86F003C4962 /* ButtonItem.swift */; };
 		9FDD21E4253AF9A8008C4165 /* PlainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD21E3253AF9A8008C4165 /* PlainCell.swift */; };
 		9FDD21E7253AF9AF008C4165 /* PlainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD21E6253AF9AF008C4165 /* PlainItem.swift */; };
-		E15134FE2540ED3000366024 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15134F72540ED3000366024 /* MainPresenter.swift */; };
-		E15134FF2540ED3000366024 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15134F82540ED3000366024 /* MainRouter.swift */; };
-		E15135002540ED3000366024 /* MainContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15134F92540ED3000366024 /* MainContracts.swift */; };
-		E15135012540ED3000366024 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15134FA2540ED3000366024 /* MainViewController.swift */; };
-		E15135022540ED3000366024 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15134FB2540ED3000366024 /* MainInteractor.swift */; };
-		E15135032540ED3000366024 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15134FC2540ED3000366024 /* MainView.swift */; };
-		E15135042540ED3000366024 /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15134FD2540ED3000366024 /* MainEntity.swift */; };
-		E15135082540EF3200366024 /* MainFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135072540EF3200366024 /* MainFormViewModel.swift */; };
-		E151350C2540F97C00366024 /* MainNavigationBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151350B2540F97C00366024 /* MainNavigationBarModel.swift */; };
+		E15135F925419CC800366024 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135F125419CC800366024 /* MainPresenter.swift */; };
+		E15135FA25419CC800366024 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135F225419CC800366024 /* MainRouter.swift */; };
+		E15135FB25419CC800366024 /* MainContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135F325419CC800366024 /* MainContracts.swift */; };
+		E15135FC25419CC800366024 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135F425419CC800366024 /* MainViewController.swift */; };
+		E15135FD25419CC800366024 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135F525419CC800366024 /* MainInteractor.swift */; };
+		E15135FE25419CC800366024 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135F625419CC800366024 /* MainView.swift */; };
+		E15135FF25419CC800366024 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135F725419CC800366024 /* MainModel.swift */; };
+		E151360025419CC800366024 /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135F825419CC800366024 /* MainEntity.swift */; };
+		E151360525419F4200366024 /* ProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151360425419F4200366024 /* ProductEntity.swift */; };
+		E151360C2541A3D300366024 /* MainNavigationBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151360B2541A3D300366024 /* MainNavigationBarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,15 +94,16 @@
 		58F18698252FC86F003C4962 /* ButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonItem.swift; sourceTree = "<group>"; };
 		9FDD21E3253AF9A8008C4165 /* PlainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainCell.swift; sourceTree = "<group>"; };
 		9FDD21E6253AF9AF008C4165 /* PlainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainItem.swift; sourceTree = "<group>"; };
-		E15134F72540ED3000366024 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		E15134F82540ED3000366024 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		E15134F92540ED3000366024 /* MainContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContracts.swift; sourceTree = "<group>"; };
-		E15134FA2540ED3000366024 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E15134FB2540ED3000366024 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
-		E15134FC2540ED3000366024 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		E15134FD2540ED3000366024 /* MainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
-		E15135072540EF3200366024 /* MainFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFormViewModel.swift; sourceTree = "<group>"; };
-		E151350B2540F97C00366024 /* MainNavigationBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationBarModel.swift; sourceTree = "<group>"; };
+		E15135F125419CC800366024 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		E15135F225419CC800366024 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		E15135F325419CC800366024 /* MainContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContracts.swift; sourceTree = "<group>"; };
+		E15135F425419CC800366024 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E15135F525419CC800366024 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		E15135F625419CC800366024 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E15135F725419CC800366024 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		E15135F825419CC800366024 /* MainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
+		E151360425419F4200366024 /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntity.swift; sourceTree = "<group>"; };
+		E151360B2541A3D300366024 /* MainNavigationBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationBarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,25 +301,50 @@
 		E13ABAE92540DB270075797E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E15135062540EF1300366024 /* Models */,
-				E15134FC2540ED3000366024 /* MainView.swift */,
-				E15134FA2540ED3000366024 /* MainViewController.swift */,
-				E15134FB2540ED3000366024 /* MainInteractor.swift */,
-				E15134F72540ED3000366024 /* MainPresenter.swift */,
-				E15134FD2540ED3000366024 /* MainEntity.swift */,
-				E15134F82540ED3000366024 /* MainRouter.swift */,
-				E15134F92540ED3000366024 /* MainContracts.swift */,
+				E151360A2541A2EC00366024 /* Views */,
+				E15136092541A2D400366024 /* Protocols */,
+				E15136082541A2A700366024 /* Models */,
+				E15136072541A29300366024 /* Entities */,
+				E15135F425419CC800366024 /* MainViewController.swift */,
+				E15135F525419CC800366024 /* MainInteractor.swift */,
+				E15135F125419CC800366024 /* MainPresenter.swift */,
+				E15135F825419CC800366024 /* MainEntity.swift */,
+				E15135F225419CC800366024 /* MainRouter.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
 		};
-		E15135062540EF1300366024 /* Models */ = {
+		E15136072541A29300366024 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				E15135072540EF3200366024 /* MainFormViewModel.swift */,
-				E151350B2540F97C00366024 /* MainNavigationBarModel.swift */,
+				E151360425419F4200366024 /* ProductEntity.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		E15136082541A2A700366024 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E15135F725419CC800366024 /* MainModel.swift */,
+				E151360B2541A3D300366024 /* MainNavigationBarModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		E15136092541A2D400366024 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E15135F325419CC800366024 /* MainContracts.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		E151360A2541A2EC00366024 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E15135F625419CC800366024 /* MainView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,32 +454,33 @@
 				58F18688252F8D45003C4962 /* InputFieldItem.swift in Sources */,
 				58CAD472252F700D00C62E64 /* AppDelegate.swift in Sources */,
 				586ED188253100E5008C6ADB /* Vibrate.swift in Sources */,
+				E15135FA25419CC800366024 /* MainRouter.swift in Sources */,
+				E151360525419F4200366024 /* ProductEntity.swift in Sources */,
 				587F886B252F85CC005EF786 /* Typography.swift in Sources */,
+				E15135FC25419CC800366024 /* MainViewController.swift in Sources */,
 				587F8879252F85CC005EF786 /* Token.swift in Sources */,
 				9FDD21E7253AF9AF008C4165 /* PlainItem.swift in Sources */,
-				E15134FF2540ED3000366024 /* MainRouter.swift in Sources */,
-				E15135082540EF3200366024 /* MainFormViewModel.swift in Sources */,
 				587F8866252F85CC005EF786 /* Label.swift in Sources */,
 				587F8869252F85CC005EF786 /* ReadonlyFieldItem.swift in Sources */,
 				587F886C252F85CC005EF786 /* Font.swift in Sources */,
-				E15135002540ED3000366024 /* MainContracts.swift in Sources */,
-				E15135042540ED3000366024 /* MainEntity.swift in Sources */,
-				E15135012540ED3000366024 /* MainViewController.swift in Sources */,
-				E151350C2540F97C00366024 /* MainNavigationBarModel.swift in Sources */,
+				E151360025419CC800366024 /* MainEntity.swift in Sources */,
+				E15135FE25419CC800366024 /* MainView.swift in Sources */,
+				E151360C2541A3D300366024 /* MainNavigationBarModel.swift in Sources */,
 				58F18691252F969C003C4962 /* ImageItem.swift in Sources */,
 				587F886A252F85CC005EF786 /* FormViewCellProtocol.swift in Sources */,
 				58F1868F252F9693003C4962 /* ImageCell.swift in Sources */,
+				E15135FF25419CC800366024 /* MainModel.swift in Sources */,
 				9FDD21E4253AF9A8008C4165 /* PlainCell.swift in Sources */,
+				E15135F925419CC800366024 /* MainPresenter.swift in Sources */,
+				E15135FD25419CC800366024 /* MainInteractor.swift in Sources */,
 				58F1868A252F8D52003C4962 /* InputField.swift in Sources */,
+				E15135FB25419CC800366024 /* MainContracts.swift in Sources */,
 				587F8868252F85CC005EF786 /* FormViewItemProtocol.swift in Sources */,
 				587F887B252F85CC005EF786 /* RootViewController.swift in Sources */,
-				E15134FE2540ED3000366024 /* MainPresenter.swift in Sources */,
-				E15135022540ED3000366024 /* MainInteractor.swift in Sources */,
 				587F886D252F85CC005EF786 /* SplashViewController.swift in Sources */,
 				58F18693252FC22A003C4962 /* Button.swift in Sources */,
 				587F887A252F85CC005EF786 /* LoginViewController.swift in Sources */,
 				587F886E252F85CC005EF786 /* FormView.swift in Sources */,
-				E15135032540ED3000366024 /* MainView.swift in Sources */,
 				58F18699252FC86F003C4962 /* ButtonItem.swift in Sources */,
 				58F18697252FC868003C4962 /* ButtonCell.swift in Sources */,
 			);

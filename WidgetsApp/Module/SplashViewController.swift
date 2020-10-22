@@ -34,9 +34,10 @@ extension SplashViewController {
 		activityIndicator.startAnimating()
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)) {
 			if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
-				AppDelegate.shared.rootViewController.switchToMainScreen()
+				AppDelegate.shared.rootViewController.switchToScreen(viewController: MainViewController(),
+																	 navigationController: UINavigationController())
 			} else {
-				AppDelegate.shared.rootViewController.switchToLogout()
+				AppDelegate.shared.rootViewController.switchToScreen(viewController: LoginViewController())
 			}
 			self.activityIndicator.stopAnimating()
 		}

@@ -8,18 +8,19 @@
 
 import UIKit
 
+/// Модель данных простой ячейки
 struct PlainItem {
 
 	/// Заголовок
 	let title: String
 
-	/// подзаговок
+	/// Подзаголовок
 	var subtitle: String
 
 	/// Картинка
 	var image: UIImage?
 
-	/// краткий текст
+	/// Краткий текст
 	var caption: String?
 }
 

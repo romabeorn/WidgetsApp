@@ -8,21 +8,24 @@
 
 import UIKit
 
-// MARK: - MainView Delegate
+// MARK: - View Delegate
 
 /// MainView Delegate
 protocol MainViewDelegate: class {
 
 }
 
-// MARK: - MainView Data Source
+// MARK: - View Data Source
 
 /// MainView Data Source
 protocol MainViewDataSource: class {
 
-	func itemsFor(view: MainView) -> [FormViewItemProtocol]
+	/// View получит айтемы
+	/// - Parameter view: Модель данных
+	func itemsFor(view: MainView) -> [FormViewItemProtocol]?
 }
 
+/// View модуля Main
 final class MainView: UIView {
 
 	// MARK: - Public Properties
@@ -57,7 +60,7 @@ final class MainView: UIView {
 
 	// MARK: - Public Methods
 
-	/// Reloading the data and update the ui according to the new data
+	/// Обновление данных View на основе новой модели
 	func reloadData() {
 		formView.items = dataSource?.itemsFor(view: self) ?? []
 	}
@@ -69,12 +72,10 @@ extension MainView {
 
 	private func setupUIElements() {
 		backgroundColor = Token.backgroundSecondary.color
-		setupFormView()
-		setupConstraints()
+		addSubview(formView)
 	}
 
 	private func setupConstraints() {
-		addSubview(formView)
 		formView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
 			formView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
@@ -82,9 +83,5 @@ extension MainView {
 			formView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
 			formView.bottomAnchor.constraint(equalTo: bottomAnchor)
 		])
-	}
-
-	private func setupFormView() {
-		formView.items = dataSource?.itemsFor(view: self) ?? []
 	}
 }

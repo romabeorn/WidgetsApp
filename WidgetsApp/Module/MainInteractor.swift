@@ -6,70 +6,38 @@
 //  Copyright © 2020 BeornStudio. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /// Main Module Interactor
 final class MainInteractor: MainInteractorProtocol {
 
-	func fetch(objectFor presenter: MainPresenterProtocol) {
-		let entity = data()
+	func fetch(entityFor presenter: MainPresenterProtocol) {
+		let entity = getData()
 
-		if let object = entity {
-			presenter.interactor(self, didFetch: object)
+		if let entity = entity {
+			presenter.interactor(didFetch: entity)
 		} else {
-			presenter.interactor(self, didFailWith: NSError())
+			presenter.interactor(didFailWith: NSError())
 		}
 	}
+}
 
-	func formViewModel(object: MainEntity.Shop) -> MainFormViewModel {
-		var items: [FormViewItemProtocol] = []
-		switch object {
-		case .shopItems:
-			items = setupShopItems()
-		case .zooItems:
-			items = setupZooItems()
-		}
-		return MainFormViewModel(items: items)
-	}
+// MARK: - Private
 
-	func navigationBarModel(object: MainEntity.Shop) -> MainNavigationBarModel {
-		switch object {
-		case .shopItems:
-			return MainNavigationBarModel(title: "Магазин", buttonTitle: "Выход")
-		case .zooItems:
-			return MainNavigationBarModel(title: "Зоомагазин", buttonTitle: "Выход")
-		}
-	}
+extension MainInteractor {
 
-	private func data() -> MainEntity.Type? {
-		return Optional(MainEntity.self)
-	}
-
-	private func setupShopItems() -> [FormViewItemProtocol] {
-		var items: [FormViewItemProtocol] = []
-		items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
-							   subtitle: "Студентам и пенсионерам бесплатно",
-							   image: UIImage(named: "logo"),
-							   caption: "Акциая действует только до 2 ноября"))
-		items.append(PlainItem(title: "Coca-Cola по 39 рублей",
-							   subtitle: "Студентам бесплатно",
-							   image: UIImage(named: "logo"),
-							   caption: "Акциая действует только до 10 ноября"))
-		items.append(PlainItem(title: "Чипсы Lays - 80 рублей",
-							   subtitle: "Всем платно",
-							   image: UIImage(named: "logo"),
-							   caption: "Акциая действует только до 1 ноября"))
-		items.append(ButtonItem(style: .accept, title: "Купить", action: {}))
-		return items
-	}
-
-	private func setupZooItems() -> [FormViewItemProtocol] {
-		var items: [FormViewItemProtocol] = []
-		items.append(ReadonlyFieldItem(title: "Лабрадор в добрые руки", text: "Отдаю лабрадора, нечем его кормить"))
-		items.append(ReadonlyFieldItem(title: "Котенок в добрые руки", text: "Котенку нужен новый хозяин, старый умер"))
-		items.append(ReadonlyFieldItem(title: "Отдам кота за 1 рубль", text: """
-						Продаю долбаного кота почти за бесценок, просто хочу получить хоть что-то за него
-						"""))
-		return items
+	private func getData() -> MainEntity? {
+		var products: [ProductEntity] = []
+		products.append(ProductEntity(name: "Молоко", price: "60 руб.", note: "Акция продолжится до 8 февраля"))
+		products.append(ProductEntity(name: "Яйца", price: "80 руб.", note: "Акция продолжится до 27 июня"))
+		products.append(ProductEntity(name: "Хлеб", price: "20 руб.", note: "Акция продолжится до 2 мая"))
+		products.append(ProductEntity(name: "Сметана", price: "450 руб.", note: "Акция продолжится до 2 мая"))
+		products.append(ProductEntity(name: "Вино", price: "670 руб.", note: "Акция продолжится до 2 мая"))
+		products.append(ProductEntity(name: "Сосиски", price: "250 руб.", note: "Акция продолжится до 1 мая"))
+		products.append(ProductEntity(name: "Сникерс", price: "40 руб.", note: "Акция продолжится до 1 мая"))
+		products.append(ProductEntity(name: "Творог", price: "170 руб.", note: "Акция продолжится до 10 декабря"))
+		products.append(ProductEntity(name: "Яблоки", price: "50 руб.", note: "Акция продолжится до 5 мая"))
+		let entity = MainEntity(products: products)
+		return Optional(entity)
 	}
 }

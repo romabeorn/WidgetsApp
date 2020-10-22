@@ -27,11 +27,15 @@ extension AppDelegate {
 
 	/// Синглтон AppDelegate
 	static var shared: AppDelegate {
+		// swiftlint:disable force_cast
 		return UIApplication.shared.delegate as! AppDelegate
+		// swiftlint: enable force_cast
 	}
 
 	/// Корневой UIViewController приложения
 	var rootViewController: RootViewController {
+		// swiftlint:disable force_cast force_unwrapping
 		return window!.rootViewController as! RootViewController
+		// swiftlint: enable force_cast force_unwrapping
 	}
 }
