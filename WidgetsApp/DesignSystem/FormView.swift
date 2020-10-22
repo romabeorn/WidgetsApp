@@ -91,5 +91,6 @@ extension FormView {
 			return
 		}
 		items.forEach { register($0.type, forCellReuseIdentifier: $0.identifier) }
+		reloadData()
 	}
 }

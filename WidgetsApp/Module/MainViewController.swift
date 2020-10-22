@@ -2,95 +2,73 @@
 //  MainViewController.swift
 //  WidgetsApp
 //
-//  Created by Roman Matveev on 07.10.2020.
-//  Copyright © 2020 Beorn. All rights reserved.
+//  Created Beorn on 22.10.2020.
+//  Copyright © 2020 BeornStudio. All rights reserved.
 //
 
 import UIKit
 
-/// Главный экран приложения
+/// Main Module View
 final class MainViewController: UIViewController {
 
 	// MARK: - Private Properties
 
-	private let formView: FormView = FormView()
+	private let moduleMainView = MainView()
 
-	// MARK: - View Life Cycle
+	private var presenter: MainPresenterProtocol!
+
+	private var object: MainEntity?
+
+	private var items: [FormViewItemProtocol] = []
+
+	// MARK: - ViewController Life Cycle
+
+	override func loadView() {
+		moduleMainView.delegate = self
+		moduleMainView.dataSource = self
+		view = moduleMainView
+	}
 
 	override func viewDidLoad() {
-		setupController()
-		formView.items = setupItems()
-		setupConstraints()
+		super.viewDidLoad()
+		presenter = MainPresenter(viewController: self)
+
+		// Informs the Presenter that the View is ready to receive data.
+		presenter.fetch(objectFor: self)
+	}
+
+	@objc private func navBarAction() {
+		presenter.navigationBarBackButtonTapped()
 	}
 }
 
-// MARK: - Private
+// MARK: - MainViewControllerProtocol
 
-extension MainViewController {
+extension MainViewController: MainViewControllerProtocol {
 
-	@objc private func logout() {
-		Vibration.heavy.vibrate()
-		UserDefaults.standard.set(false, forKey: "LOGGED_IN")
-		AppDelegate.shared.rootViewController.switchToLogout()
+	func updateItems(_ items: [FormViewItemProtocol]) {
+		self.items = items
+		moduleMainView.reloadData()
 	}
 
-	private func setupController() {
-		view.backgroundColor = Token.backgroundSecondary.color
-		title = "Главная"
-		let item = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(logout))
+	func updateNavigationBar(title: String, buttonTitle: String) {
+		self.title = title
+		let item = UIBarButtonItem(title: buttonTitle, style: .plain, target: self, action: #selector(navBarAction))
 		navigationItem.setLeftBarButton(item, animated: true)
 	}
+}
 
-	private func setupItems() -> [FormViewItemProtocol] {
-		var items: [FormViewItemProtocol] = []
-		for _ in 0...10 {
-			items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
-								   subtitle: "Студентам и пенсионерам бесплатно",
-								   image: UIImage(named: "logo"),
-								   caption: "Акциая действует только до 2 ноября"))
-			items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
-								   subtitle: "Студентам и пенсионерам бесплатно",
-								   image: UIImage(named: "logo"),
-								   caption: "Акциая действует только до 2 ноября"))
-			items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
-								   subtitle: "Студентам и пенсионерам бесплатно",
-								   image: UIImage(named: "logo"),
-								   caption: "Акциая действует только до 2 ноября"))
-			items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
-								   subtitle: "Студентам и пенсионерам бесплатно",
-								   image: UIImage(named: "logo"),
-								   caption: "Акциая действует только до 2 ноября"))
-			items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
-								   subtitle: "Студентам и пенсионерам бесплатно",
-								   image: UIImage(named: "logo"),
-								   caption: "Акциая действует только до 2 ноября"))
-			items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
-								   subtitle: "Студентам и пенсионерам бесплатно",
-								   image: UIImage(named: "logo"),
-								   caption: "Акциая действует только до 2 ноября"))
-			items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
-								   subtitle: "Студентам и пенсионерам бесплатно",
-								   image: UIImage(named: "logo"),
-								   caption: "Акциая действует только до 2 ноября"))
-			items.append(PlainItem(title: "Вкусные пончики всего по 60 рублей",
-								   subtitle: "",
-								   image: UIImage(named: "logo"),
-								   caption: "Акциая действует только до 2 ноября"))
-			items.append(ReadonlyFieldItem(title: "Title", text: "Text"))
-			items.append(ReadonlyFieldItem(title: "Title", text: "Text"))
-			items.append(ReadonlyFieldItem(title: "Title", text: "Text"))
-		}
+// MARK: - MainViewDelegate
+
+extension MainViewController: MainViewDelegate {
+
+}
+
+// MARK: - MainViewDataSource
+
+extension MainViewController: MainViewDataSource {
+
+	func itemsFor(view: MainView) -> [FormViewItemProtocol] {
 		return items
-	}
-
-	private func setupConstraints() {
-		view.addSubview(formView)
-		formView.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([
-			formView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-			formView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-			formView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-			formView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-		])
 	}
 }
