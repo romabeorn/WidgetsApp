@@ -6,17 +6,11 @@
 //  Copyright © 2020 BeornStudio. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-/// Main Module Entity
+/// Сущность модуля Main
 struct MainEntity {
 
-	/// Shop
-	///
-	/// - shopItems - Данные продуктового магазина
-	/// - zooItems - Данные зоомагазина
-	enum Shop: String {
-		case shopItems
-		case zooItems
-	}
+	/// Продукты
+	let products: [ProductEntity]
 }

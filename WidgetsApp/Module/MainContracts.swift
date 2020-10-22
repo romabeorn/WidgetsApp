@@ -10,56 +10,57 @@ import UIKit
 
 // MARK: - ViewController Protocol
 
-/// Main Module View Controller Protocol
+/// Протокол Main Module View Controller
 protocol MainViewControllerProtocol: class {
 
-	/// Обновить данные в FormView
-	/// - Parameter items: Данные FormViewItemProtocol
-	func updateItems(_ items: [FormViewItemProtocol])
-
-	func updateNavigationBar(title: String, buttonTitle: String)
+	/// Обновить данные на основе модели
+	/// - Parameter model: модель данных
+	func set(model: MainModel)
 }
 
 // MARK: - Interactor Protocol
 
-/// Main Module Interactor Protocol
+/// Протокол Main Module Interactor
 protocol MainInteractorProtocol {
 
-	// Fetch Object from Data Layer
-	func fetch(objectFor presenter: MainPresenterProtocol)
-
-	/// Модель FormView
-	/// - Parameter object: Сущность главного экрана
-	func formViewModel(object: MainEntity.Shop) -> MainFormViewModel
-
-	/// Модель навбара
-	/// - Parameter object: Сущность главного экрана
-	func navigationBarModel(object: MainEntity.Shop) -> MainNavigationBarModel
+	/// Извлечь Entity из Interactor
+	/// - Parameter presenter: объект Presenter
+	func fetch(entityFor presenter: MainPresenterProtocol)
 }
 
 // MARK: - Presenter Protocol
 
-/// Main Module Presenter Protocol
+/// Протокол Main Module Presenter
 protocol MainPresenterProtocol {
 
-	/// The presenter will fetch data from the Interactor thru implementing the Interactor fetch function.
-	func fetch(objectFor view: MainViewControllerProtocol)
+	// MARK: - ViewController -> Presenter
 
-	/// The Interactor will inform the Presenter a successful fetch.
-	func interactor(_ interactor: MainInteractorProtocol, didFetch object: MainEntity.Type)
+	/// ViewController модуля
+	var viewController: MainViewControllerProtocol? { get set }
 
-	/// The Interactor will inform the Presenter a failed fetch.
-	func interactor(_ interactor: MainInteractorProtocol, didFailWith error: Error)
+	/// ViewController объявит Presenter, что он загрузился 
+	func viewDidLoad()
 
-	/// Была нажата кнопка на навбаре
+	/// ViewController объявит Presenter, что была нажата клавиша "Назад" на навигационной панели
 	func navigationBarBackButtonTapped()
+
+	// MARK: - Interactor -> Presenter
+
+	/// Interactor объявит Presenter об успешном извлечении Entity
+	/// - Parameter entity: Сущность модуля
+	func interactor(didFetch entity: MainEntity)
+
+	/// Interactor объявит Presenter о том, что при извлечении Entity произошла ошибка
+	/// - Parameter error: Ошибка
+	func interactor(didFailWith error: Error)
 }
 
 // MARK: - Router Protocol
 
-/// Main Module Router Protocol
+/// Протокол Main Module Router
 protocol MainRouterProtocol {
 
-	/// Перейти на главный экран
-	func navigateToMainScreen()
+	/// Перейти на экран
+	/// - Parameter viewController: Объект UIViewController
+	func navigateTo(viewController: UIViewController)
 }

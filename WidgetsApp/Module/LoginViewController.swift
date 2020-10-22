@@ -76,7 +76,8 @@ extension LoginViewController {
 	@objc private func login() {
 		Vibration.success.vibrate()
 		UserDefaults.standard.set(true, forKey: "LOGGED_IN")
-		AppDelegate.shared.rootViewController.switchToMainScreen()
+		AppDelegate.shared.rootViewController.switchToScreen(viewController: MainViewController(),
+															 navigationController: UINavigationController())
 	}
 
 	@objc private func keyboardWillShow(notification: NSNotification) {

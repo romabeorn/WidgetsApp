@@ -6,12 +6,13 @@
 //  Copyright © 2020 BeornStudio. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-/// Main Module Router
+/// Router модуля Main
 final class MainRouter: MainRouterProtocol {
 
-	func navigateToMainScreen() {
-		AppDelegate.shared.rootViewController.switchToLogout()
+	func navigateTo(viewController: UIViewController) {
+		AppDelegate.shared.rootViewController.switchToScreen(viewController: LoginViewController(), animation: .dismiss)
 	}
 }

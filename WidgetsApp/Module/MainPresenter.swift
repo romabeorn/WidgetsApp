@@ -8,46 +8,48 @@
 
 import UIKit
 
-/// Main Module Presenter
+/// Presenter модуля Main
 final class MainPresenter {
 
-	weak private var viewController: MainViewControllerProtocol?
-	private var interactor: MainInteractorProtocol
-	private var wireframe: MainRouterProtocol
+	// MARK: - Public Properties
 
-	// MARK: - Init
+	/// ViewController модуля
+	weak var viewController: MainViewControllerProtocol?
 
-	init(viewController: MainViewControllerProtocol) {
-		self.viewController = viewController
-		self.interactor = MainInteractor()
-		self.wireframe = MainRouter()
-	}
+	// MARK: - Private Properties
+
+	private var interactor: MainInteractorProtocol = MainInteractor()
+	private var router: MainRouterProtocol = MainRouter()
 }
 
-// MARK: - MainPresenterProtocol
+// MARK: - Presenter Protocol
 
 extension MainPresenter: MainPresenterProtocol {
 
-	func fetch(objectFor view: MainViewControllerProtocol) {
-		interactor.fetch(objectFor: self)
-	}
+	// MARK: - ViewController -> Presenter
 
-	func interactor(_ interactor: MainInteractorProtocol, didFetch object: MainEntity.Type) {
-
-		let formViewModel = interactor.formViewModel(object: object.Shop.shopItems)
-		let navigationBarModel = interactor.navigationBarModel(object: object.Shop.shopItems)
-
-		viewController?.updateItems(formViewModel.items)
-		viewController?.updateNavigationBar(title: navigationBarModel.title, buttonTitle: navigationBarModel.buttonTitle)
-	}
-
-	func interactor(_ interactor: MainInteractorProtocol, didFailWith error: Error) {
-
+	func viewDidLoad() {
+		interactor.fetch(entityFor: self)
 	}
 
 	func navigationBarBackButtonTapped() {
-		Vibration.heavy.vibrate()
 		UserDefaults.standard.set(false, forKey: "LOGGED_IN")
-		wireframe.navigateToMainScreen()
+		self.router.navigateTo(viewController: LoginViewController())
+	}
+
+	// MARK: - Interactor -> Presenter
+
+	func interactor(didFetch entity: MainEntity) {
+		let navigationBarModel = MainNavigationBarModel(title: "Магазин", buttonTitle: "Выход")
+		var items: [PlainItem] = []
+		entity.products.forEach {
+			items.append(PlainItem(title: $0.name, subtitle: $0.price, image: UIImage(named: "logo"), caption: $0.note))
+		}
+		let model = MainModel(items: items, navigationBarModel: navigationBarModel)
+		viewController?.set(model: model)
+	}
+
+	func interactor(didFailWith error: Error) {
+
 	}
 }

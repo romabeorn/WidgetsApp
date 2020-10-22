@@ -11,11 +11,29 @@ import UIKit
 /// Протокол навигации по приложению
 protocol RootNavigationProtocol {
 
-	/// Переключение на главный экран
-	func switchToMainScreen()
+	/// Перейти на экран
+	/// - Parameter viewController: Объект UIViewController
+	/// - Parameter navigationController: Объект UINavigationController
+	/// - Parameter animation: Анимация появления контроллера
+	func switchToScreen(viewController: UIViewController, navigationController: UINavigationController?, animation: Animation)
+}
 
-	/// Переключение на экран входа
-	func switchToLogout()
+extension RootNavigationProtocol {
+
+	func switchToScreen(viewController: UIViewController,
+						navigationController: UINavigationController? = nil,
+						animation: Animation = .fade) {
+		switchToScreen(viewController: viewController, navigationController: navigationController, animation: animation)
+	}
+}
+
+/// Animation
+enum Animation {
+
+	/// Прямой флип
+	case fade
+	/// Обратный флип
+	case dismiss
 }
 
 /// Корневой контроллер, отвечающий за переходы внутри приложения
@@ -53,15 +71,17 @@ final class RootViewController: UIViewController {
 
 extension RootViewController: RootNavigationProtocol {
 
-	func switchToMainScreen() {
-		let mainViewController = MainViewController()
-		let main = UINavigationController(rootViewController: mainViewController)
-		animateFadeTransition(to: main)
-	}
-
-	func switchToLogout() {
-		let loginViewController = LoginViewController()
-		animateDismissTransition(to: loginViewController)
+	func switchToScreen(viewController: UIViewController, navigationController: UINavigationController?, animation: Animation) {
+		var controller = viewController
+		if navigationController != nil {
+			controller = UINavigationController(rootViewController: viewController)
+		}
+		switch animation {
+		case .dismiss:
+			animateDismissTransition(to: controller)
+		default:
+			animateFadeTransition(to: controller)
+		}
 	}
 }
 

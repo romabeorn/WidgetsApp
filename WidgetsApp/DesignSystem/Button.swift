@@ -9,16 +9,15 @@
 import UIKit
 
 /// Стиль кнопки
-///
-/// - accept Стиль "Ок"
-/// - negative Стиль "Отрицание"
-/// - warning Стиль "Предупреждение"
-/// - gradient Стиль "Градиент"
 enum ButtonStyle {
 
+	/// accept Стиль "Ок"
 	case accept
+	/// negative Стиль "Отрицание"
 	case negative
+	/// warning Стиль "Предупреждение"
 	case warning
+	/// gradient Стиль "Градиент"
 	case gradient(colorA: UIColor, colorB: UIColor)
 }
 

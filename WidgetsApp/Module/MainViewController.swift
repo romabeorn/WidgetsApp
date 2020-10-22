@@ -8,18 +8,14 @@
 
 import UIKit
 
-/// Main Module View
+/// ViewController модуля Main
 final class MainViewController: UIViewController {
 
 	// MARK: - Private Properties
 
 	private let moduleMainView = MainView()
-
-	private var presenter: MainPresenterProtocol!
-
-	private var object: MainEntity?
-
-	private var items: [FormViewItemProtocol] = []
+	private var presenter: MainPresenterProtocol = MainPresenter()
+	private var model: MainModel?
 
 	// MARK: - ViewController Life Cycle
 
@@ -31,44 +27,50 @@ final class MainViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		presenter = MainPresenter(viewController: self)
-
-		// Informs the Presenter that the View is ready to receive data.
-		presenter.fetch(objectFor: self)
+		presenter.viewController = self
+		presenter.viewDidLoad()
 	}
 
-	@objc private func navBarAction() {
-		presenter.navigationBarBackButtonTapped()
+	// MARK: - Objective-C Private
+
+	@objc private func actionBack() {
+		self.presenter.navigationBarBackButtonTapped()
 	}
 }
 
-// MARK: - MainViewControllerProtocol
+// MARK: - ViewController Protocol
 
 extension MainViewController: MainViewControllerProtocol {
 
-	func updateItems(_ items: [FormViewItemProtocol]) {
-		self.items = items
+	func set(model: MainModel) {
+		self.model = model
+		updateNavigationBar(model: model.navigationBarModel)
 		moduleMainView.reloadData()
-	}
-
-	func updateNavigationBar(title: String, buttonTitle: String) {
-		self.title = title
-		let item = UIBarButtonItem(title: buttonTitle, style: .plain, target: self, action: #selector(navBarAction))
-		navigationItem.setLeftBarButton(item, animated: true)
 	}
 }
 
-// MARK: - MainViewDelegate
+// MARK: - View Delegate
 
 extension MainViewController: MainViewDelegate {
 
 }
 
-// MARK: - MainViewDataSource
+// MARK: - View DataSource
 
 extension MainViewController: MainViewDataSource {
 
-	func itemsFor(view: MainView) -> [FormViewItemProtocol] {
-		return items
+	func itemsFor(view: MainView) -> [FormViewItemProtocol]? {
+		return model?.items
+	}
+}
+
+// MARK: - Private
+
+extension MainViewController {
+
+	private func updateNavigationBar(model: MainNavigationBarModel) {
+		self.title = model.title
+		let item = UIBarButtonItem(title: model.buttonTitle, style: .plain, target: self, action: #selector(actionBack))
+		navigationItem.setLeftBarButton(item, animated: true)
 	}
 }
