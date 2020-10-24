@@ -53,6 +53,22 @@
 		E151360025419CC800366024 /* MainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135F825419CC800366024 /* MainEntity.swift */; };
 		E151360525419F4200366024 /* ProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151360425419F4200366024 /* ProductEntity.swift */; };
 		E151360C2541A3D300366024 /* MainNavigationBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151360B2541A3D300366024 /* MainNavigationBarModel.swift */; };
+		E15136152541DB6300366024 /* FlickrModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15136142541DB6300366024 /* FlickrModels.swift */; };
+		E151361D2544794C00366024 /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151361C2544794C00366024 /* EndpointProtocol.swift */; };
+		E151362025447A4F00366024 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151361F25447A4F00366024 /* HTTPTask.swift */; };
+		E151362325447A5600366024 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151362225447A5600366024 /* HTTPMethod.swift */; };
+		E151362C25447C1E00366024 /* EncoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E151362B25447C1E00366024 /* EncoderProtocol.swift */; };
+		E1782D362544822E004417BC /* QueryEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D352544822E004417BC /* QueryEncoder.swift */; };
+		E1782D3A254486F9004417BC /* BodyEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D39254486F9004417BC /* BodyEncoder.swift */; };
+		E1782D3D2544879E004417BC /* NetworkRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D3C2544879E004417BC /* NetworkRouterProtocol.swift */; };
+		E1782D4125448848004417BC /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D4025448848004417BC /* NetworkRouter.swift */; };
+		E1782D4625448CE0004417BC /* FlickrNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D4525448CE0004417BC /* FlickrNetworkManager.swift */; };
+		E1782D4925448DAA004417BC /* FlickrEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D4825448DAA004417BC /* FlickrEndpoint.swift */; };
+		E1782D512544A08C004417BC /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D502544A08C004417BC /* NetworkManagerProtocol.swift */; };
+		E1782D662544A845004417BC /* FlickrNetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D652544A845004417BC /* FlickrNetworkManagerProtocol.swift */; };
+		E1782D6A2544AC0F004417BC /* FlickrLiveStaticEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D692544AC0F004417BC /* FlickrLiveStaticEndpoint.swift */; };
+		E1782D6D2544B214004417BC /* FlickrLiveStaticNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D6C2544B214004417BC /* FlickrLiveStaticNetworkManager.swift */; };
+		E1782D742544B247004417BC /* FlickrLiveStaticNetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D732544B247004417BC /* FlickrLiveStaticNetworkManagerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +120,22 @@
 		E15135F825419CC800366024 /* MainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntity.swift; sourceTree = "<group>"; };
 		E151360425419F4200366024 /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntity.swift; sourceTree = "<group>"; };
 		E151360B2541A3D300366024 /* MainNavigationBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationBarModel.swift; sourceTree = "<group>"; };
+		E15136142541DB6300366024 /* FlickrModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FlickrModels.swift; path = ../Module/FlickrModels.swift; sourceTree = "<group>"; };
+		E151361C2544794C00366024 /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
+		E151361F25447A4F00366024 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		E151362225447A5600366024 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E151362B25447C1E00366024 /* EncoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncoderProtocol.swift; sourceTree = "<group>"; };
+		E1782D352544822E004417BC /* QueryEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryEncoder.swift; sourceTree = "<group>"; };
+		E1782D39254486F9004417BC /* BodyEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyEncoder.swift; sourceTree = "<group>"; };
+		E1782D3C2544879E004417BC /* NetworkRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouterProtocol.swift; sourceTree = "<group>"; };
+		E1782D4025448848004417BC /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		E1782D4525448CE0004417BC /* FlickrNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrNetworkManager.swift; sourceTree = "<group>"; };
+		E1782D4825448DAA004417BC /* FlickrEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrEndpoint.swift; sourceTree = "<group>"; };
+		E1782D502544A08C004417BC /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		E1782D652544A845004417BC /* FlickrNetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrNetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		E1782D692544AC0F004417BC /* FlickrLiveStaticEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrLiveStaticEndpoint.swift; sourceTree = "<group>"; };
+		E1782D6C2544B214004417BC /* FlickrLiveStaticNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrLiveStaticNetworkManager.swift; sourceTree = "<group>"; };
+		E1782D732544B247004417BC /* FlickrLiveStaticNetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrLiveStaticNetworkManagerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +284,7 @@
 		58CAD470252F700D00C62E64 /* WidgetsApp */ = {
 			isa = PBXGroup;
 			children = (
+				E151361A254470AC00366024 /* Network */,
 				587F887E252F85F8005EF786 /* Module */,
 				587F887D252F85E3005EF786 /* DesignSystem */,
 				58CAD471252F700D00C62E64 /* AppDelegate.swift */,
@@ -301,6 +334,7 @@
 		E13ABAE92540DB270075797E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E1782D5B2544A424004417BC /* Serivce */,
 				E151360A2541A2EC00366024 /* Views */,
 				E15136092541A2D400366024 /* Protocols */,
 				E15136082541A2A700366024 /* Models */,
@@ -345,6 +379,111 @@
 				E15135F625419CC800366024 /* MainView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		E151361A254470AC00366024 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E1782D4425448CD3004417BC /* Manager */,
+				E1782D3225448206004417BC /* Endpoint */,
+				E1782D31254481FB004417BC /* Service */,
+				E1782D2F254481E6004417BC /* Encoder */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E1782D2F254481E6004417BC /* Encoder */ = {
+			isa = PBXGroup;
+			children = (
+				E151362B25447C1E00366024 /* EncoderProtocol.swift */,
+				E1782D352544822E004417BC /* QueryEncoder.swift */,
+				E1782D39254486F9004417BC /* BodyEncoder.swift */,
+			);
+			name = Encoder;
+			sourceTree = "<group>";
+		};
+		E1782D31254481FB004417BC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E1782D3C2544879E004417BC /* NetworkRouterProtocol.swift */,
+				E1782D4025448848004417BC /* NetworkRouter.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		E1782D3225448206004417BC /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				E151361C2544794C00366024 /* EndpointProtocol.swift */,
+				E151362225447A5600366024 /* HTTPMethod.swift */,
+				E151361F25447A4F00366024 /* HTTPTask.swift */,
+			);
+			name = Endpoint;
+			sourceTree = "<group>";
+		};
+		E1782D4425448CD3004417BC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E1782D502544A08C004417BC /* NetworkManagerProtocol.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		E1782D542544A2DC004417BC /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				E1782D4825448DAA004417BC /* FlickrEndpoint.swift */,
+				E1782D692544AC0F004417BC /* FlickrLiveStaticEndpoint.swift */,
+			);
+			name = Endpoints;
+			path = ../Network;
+			sourceTree = "<group>";
+		};
+		E1782D552544A2EA004417BC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E1782D7C2544B2DA004417BC /* Flickr */,
+				E1782D792544B2C7004417BC /* FlickrLiveStatic */,
+			);
+			name = Managers;
+			path = ../Network;
+			sourceTree = "<group>";
+		};
+		E1782D572544A352004417BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E15136142541DB6300366024 /* FlickrModels.swift */,
+			);
+			name = Models;
+			path = ../Network;
+			sourceTree = "<group>";
+		};
+		E1782D5B2544A424004417BC /* Serivce */ = {
+			isa = PBXGroup;
+			children = (
+				E1782D572544A352004417BC /* Models */,
+				E1782D542544A2DC004417BC /* Endpoints */,
+				E1782D552544A2EA004417BC /* Managers */,
+			);
+			name = Serivce;
+			sourceTree = "<group>";
+		};
+		E1782D792544B2C7004417BC /* FlickrLiveStatic */ = {
+			isa = PBXGroup;
+			children = (
+				E1782D732544B247004417BC /* FlickrLiveStaticNetworkManagerProtocol.swift */,
+				E1782D6C2544B214004417BC /* FlickrLiveStaticNetworkManager.swift */,
+			);
+			name = FlickrLiveStatic;
+			sourceTree = "<group>";
+		};
+		E1782D7C2544B2DA004417BC /* Flickr */ = {
+			isa = PBXGroup;
+			children = (
+				E1782D652544A845004417BC /* FlickrNetworkManagerProtocol.swift */,
+				E1782D4525448CE0004417BC /* FlickrNetworkManager.swift */,
+			);
+			name = Flickr;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,6 +588,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1782D4625448CE0004417BC /* FlickrNetworkManager.swift in Sources */,
+				E1782D4125448848004417BC /* NetworkRouter.swift in Sources */,
+				E151361D2544794C00366024 /* EndpointProtocol.swift in Sources */,
+				E1782D3D2544879E004417BC /* NetworkRouterProtocol.swift in Sources */,
 				58F18686252F8D3A003C4962 /* InputFieldCell.swift in Sources */,
 				587F887C252F85CC005EF786 /* ReadonlyFieldCell.swift in Sources */,
 				58F18688252F8D45003C4962 /* InputFieldItem.swift in Sources */,
@@ -456,7 +599,9 @@
 				586ED188253100E5008C6ADB /* Vibrate.swift in Sources */,
 				E15135FA25419CC800366024 /* MainRouter.swift in Sources */,
 				E151360525419F4200366024 /* ProductEntity.swift in Sources */,
+				E1782D662544A845004417BC /* FlickrNetworkManagerProtocol.swift in Sources */,
 				587F886B252F85CC005EF786 /* Typography.swift in Sources */,
+				E1782D4925448DAA004417BC /* FlickrEndpoint.swift in Sources */,
 				E15135FC25419CC800366024 /* MainViewController.swift in Sources */,
 				587F8879252F85CC005EF786 /* Token.swift in Sources */,
 				9FDD21E7253AF9AF008C4165 /* PlainItem.swift in Sources */,
@@ -464,14 +609,20 @@
 				587F8869252F85CC005EF786 /* ReadonlyFieldItem.swift in Sources */,
 				587F886C252F85CC005EF786 /* Font.swift in Sources */,
 				E151360025419CC800366024 /* MainEntity.swift in Sources */,
+				E1782D742544B247004417BC /* FlickrLiveStaticNetworkManagerProtocol.swift in Sources */,
+				E15136152541DB6300366024 /* FlickrModels.swift in Sources */,
 				E15135FE25419CC800366024 /* MainView.swift in Sources */,
+				E151362025447A4F00366024 /* HTTPTask.swift in Sources */,
 				E151360C2541A3D300366024 /* MainNavigationBarModel.swift in Sources */,
+				E1782D362544822E004417BC /* QueryEncoder.swift in Sources */,
 				58F18691252F969C003C4962 /* ImageItem.swift in Sources */,
 				587F886A252F85CC005EF786 /* FormViewCellProtocol.swift in Sources */,
 				58F1868F252F9693003C4962 /* ImageCell.swift in Sources */,
+				E1782D3A254486F9004417BC /* BodyEncoder.swift in Sources */,
 				E15135FF25419CC800366024 /* MainModel.swift in Sources */,
 				9FDD21E4253AF9A8008C4165 /* PlainCell.swift in Sources */,
 				E15135F925419CC800366024 /* MainPresenter.swift in Sources */,
+				E151362325447A5600366024 /* HTTPMethod.swift in Sources */,
 				E15135FD25419CC800366024 /* MainInteractor.swift in Sources */,
 				58F1868A252F8D52003C4962 /* InputField.swift in Sources */,
 				E15135FB25419CC800366024 /* MainContracts.swift in Sources */,
@@ -479,10 +630,14 @@
 				587F887B252F85CC005EF786 /* RootViewController.swift in Sources */,
 				587F886D252F85CC005EF786 /* SplashViewController.swift in Sources */,
 				58F18693252FC22A003C4962 /* Button.swift in Sources */,
+				E1782D6D2544B214004417BC /* FlickrLiveStaticNetworkManager.swift in Sources */,
 				587F887A252F85CC005EF786 /* LoginViewController.swift in Sources */,
+				E1782D6A2544AC0F004417BC /* FlickrLiveStaticEndpoint.swift in Sources */,
 				587F886E252F85CC005EF786 /* FormView.swift in Sources */,
 				58F18699252FC86F003C4962 /* ButtonItem.swift in Sources */,
 				58F18697252FC868003C4962 /* ButtonCell.swift in Sources */,
+				E1782D512544A08C004417BC /* NetworkManagerProtocol.swift in Sources */,
+				E151362C25447C1E00366024 /* EncoderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

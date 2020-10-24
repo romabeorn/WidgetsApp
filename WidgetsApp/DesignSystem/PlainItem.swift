@@ -24,7 +24,7 @@ struct PlainItem {
 	var caption: String?
 }
 
-extension PlainItem : FormViewItemProtocol {
+extension PlainItem: FormViewItemProtocol {
 
 	var identifier: String { "PlainItem" }
 

@@ -16,6 +16,12 @@ protocol MainViewControllerProtocol: class {
 	/// Обновить данные на основе модели
 	/// - Parameter model: модель данных
 	func set(model: MainModel)
+
+	/// Обновить данные в ячейке
+	/// - Parameters:
+	///   - image: Ячейка
+	///   - index: Номер ячейки
+	func updateItem(with image: UIImage?, index: Int)
 }
 
 // MARK: - Interactor Protocol
