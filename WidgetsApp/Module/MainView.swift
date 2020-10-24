@@ -23,6 +23,8 @@ protocol MainViewDataSource: class {
 	/// View получит айтемы
 	/// - Parameter view: Модель данных
 	func itemsFor(view: MainView) -> [FormViewItemProtocol]?
+
+	func item(at index: Int, view: MainView) -> FormViewItemProtocol?
 }
 
 /// View модуля Main
@@ -63,6 +65,12 @@ final class MainView: UIView {
 	/// Обновление данных View на основе новой модели
 	func reloadData() {
 		formView.items = dataSource?.itemsFor(view: self) ?? []
+	}
+
+	/// Обновление ячейки
+	func reloadItem(at index: Int) {
+		guard let item = dataSource?.item(at: index, view: self) else { return }
+		formView.items[index] = item
 	}
 }
 

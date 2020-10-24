@@ -12,8 +12,8 @@ import Foundation
 struct MainModel {
 
 	/// Ячейки FormView
-	let items: [FormViewItemProtocol]
+	var items: [FormViewItemProtocol]
 
 	/// Модель навигационной панель
-	let navigationBarModel: MainNavigationBarModel
+	var navigationBarModel: MainNavigationBarModel
 }

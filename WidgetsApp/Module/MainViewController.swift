@@ -42,6 +42,13 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: MainViewControllerProtocol {
 
+	func updateItem(with image: UIImage?, index: Int) {
+		guard let previous = model?.items[index] as? PlainItem else { return }
+		let new = PlainItem(title: previous.title, subtitle: previous.subtitle, image: image ?? UIImage(named: "nil"), caption: previous.caption)
+		model?.items[index] = new
+		moduleMainView.reloadItem(at: index)
+	}
+
 	func set(model: MainModel) {
 		self.model = model
 		updateNavigationBar(model: model.navigationBarModel)
@@ -58,6 +65,10 @@ extension MainViewController: MainViewDelegate {
 // MARK: - View DataSource
 
 extension MainViewController: MainViewDataSource {
+
+	func item(at index: Int, view: MainView) -> FormViewItemProtocol? {
+		return model?.items[index]
+	}
 
 	func itemsFor(view: MainView) -> [FormViewItemProtocol]? {
 		return model?.items
