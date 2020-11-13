@@ -118,7 +118,7 @@ extension RootViewController {
 
 extension RootViewController {
 
-	/// Меняет тему приложения при встрязивании телефона
+	/// Меняет тему приложения при встряхивании телефона
 	/// - Parameters:
 	///   - motion: Тип события
 	///   - event: Событие

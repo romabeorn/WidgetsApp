@@ -50,6 +50,8 @@ extension MainPresenter: MainPresenterProtocol {
 			getImages(text: item.name, item: index)
 			items.append(PlainItem(title: item.name, subtitle: item.price, image: UIImage(named: "nil"), caption: item.note))
 		}
+		
+		
 		let model = MainModel(items: items, navigationBarModel: navigationBarModel)
 		viewController?.set(model: model)
 	}
