@@ -37,7 +37,14 @@ extension MainInteractor {
 		products.append(ProductEntity(name: "Сникерс", price: "40 руб.", note: "Акция продолжится до 1 мая"))
 		products.append(ProductEntity(name: "Творог", price: "170 руб.", note: "Акция продолжится до 10 декабря"))
 		products.append(ProductEntity(name: "Яблоки", price: "50 руб.", note: "Акция продолжится до 5 мая"))
-		let entity = MainEntity(products: products)
+
+		var cards: [CardButtonEntity] = []
+
+		cards.append(CardButtonEntity(title: "hello world1", icon: "apple"))
+		cards.append(CardButtonEntity(title: "hello world2", icon: "jetpack"))
+		cards.append(CardButtonEntity(title: "hello world3", icon: "apple"))
+
+		let entity = MainEntity(products: products, cards: cards)
 		return Optional(entity)
 	}
 }

@@ -41,6 +41,12 @@ enum Token: String {
 	/// Токены кнопок
 	case negative
 	case warning
+
+	/// Токены карточек
+	case card0
+	case card1
+	case card2
+	case card0R
 }
 
 // MARK: - Token Extension

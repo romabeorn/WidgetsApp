@@ -46,10 +46,20 @@ extension MainPresenter: MainPresenterProtocol {
 
 	func interactor(didFetch entity: MainEntity) {
 		let navigationBarModel = MainNavigationBarModel(title: "Магазин", buttonTitle: "Выход")
+
+		var cardStack: [CardButtonItem] = []
+		for item in entity.cards {
+			let conf = IconConfiguration(lightColor: .lightGray, darkColor: .black)
+			cardStack.append(CardButtonItem(title: item.title, icon: Icon(type: item.icon), iconConfiguration: conf))
+		}
+		let card = CardButtonStackItem(cards: cardStack)
+		items.append(card)
+
 		for (index, item) in entity.products.enumerated() {
 			getImages(text: item.name, item: index)
 			items.append(PlainItem(title: item.name, subtitle: item.price, image: UIImage(named: "nil"), caption: item.note))
 		}
+
 		let model = MainModel(items: items, navigationBarModel: navigationBarModel)
 		viewController?.set(model: model)
 	}
