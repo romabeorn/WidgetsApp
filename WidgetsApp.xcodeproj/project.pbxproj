@@ -50,6 +50,7 @@
 		9F8063E625541ADB004A1378 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8063E525541ADB004A1378 /* ImageView.swift */; };
 		9F8063E925541C03004A1378 /* IconConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8063E825541C03004A1378 /* IconConfiguration.swift */; };
 		9F8063F125548899004A1378 /* BackgroundAtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8063F025548899004A1378 /* BackgroundAtom.swift */; };
+		9F8063FC255ED7CB004A1378 /* CardButtonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8063FB255ED7CA004A1378 /* CardButtonEntity.swift */; };
 		9FDD21E4253AF9A8008C4165 /* PlainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD21E3253AF9A8008C4165 /* PlainCell.swift */; };
 		9FDD21E7253AF9AF008C4165 /* PlainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD21E6253AF9AF008C4165 /* PlainItem.swift */; };
 		E15135F925419CC800366024 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15135F125419CC800366024 /* MainPresenter.swift */; };
@@ -126,6 +127,7 @@
 		9F8063E525541ADB004A1378 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		9F8063E825541C03004A1378 /* IconConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconConfiguration.swift; sourceTree = "<group>"; };
 		9F8063F025548899004A1378 /* BackgroundAtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundAtom.swift; sourceTree = "<group>"; };
+		9F8063FB255ED7CA004A1378 /* CardButtonEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonEntity.swift; sourceTree = "<group>"; };
 		9FDD21E3253AF9A8008C4165 /* PlainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainCell.swift; sourceTree = "<group>"; };
 		9FDD21E6253AF9AF008C4165 /* PlainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainItem.swift; sourceTree = "<group>"; };
 		E15135F125419CC800366024 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				E151360425419F4200366024 /* ProductEntity.swift */,
+				9F8063FB255ED7CA004A1378 /* CardButtonEntity.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				58F18688252F8D45003C4962 /* InputFieldItem.swift in Sources */,
 				58CAD472252F700D00C62E64 /* AppDelegate.swift in Sources */,
 				586ED188253100E5008C6ADB /* Vibrate.swift in Sources */,
+				9F8063FC255ED7CB004A1378 /* CardButtonEntity.swift in Sources */,
 				E15135FA25419CC800366024 /* MainRouter.swift in Sources */,
 				E151360525419F4200366024 /* ProductEntity.swift in Sources */,
 				E1782D662544A845004417BC /* FlickrNetworkManagerProtocol.swift in Sources */,
@@ -662,7 +666,6 @@
 				E151362025447A4F00366024 /* HTTPTask.swift in Sources */,
 				E151360C2541A3D300366024 /* MainNavigationBarModel.swift in Sources */,
 				E1782D362544822E004417BC /* QueryEncoder.swift in Sources */,
-				587F8867252F85CC005EF786 /* MainViewController.swift in Sources */,
 				9F8063E22551EEC6004A1378 /* Icon.swift in Sources */,
 				58F18691252F969C003C4962 /* ImageItem.swift in Sources */,
 				9F8063E925541C03004A1378 /* IconConfiguration.swift in Sources */,

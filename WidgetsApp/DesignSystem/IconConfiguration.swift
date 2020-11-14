@@ -8,20 +8,12 @@
 
 import UIKit
 
-enum IconSize {
-	case small
-	case middle
-	case large
-}
-
+/// Конфигуратор иконки
 struct IconConfiguration {
 
-	// Цвет для темной темы
+	/// Цвет для темной темы
 	let lightColor: UIColor
 
-	// Цвет для светлой темы
+	/// Цвет для светлой темы
 	let darkColor: UIColor?
-
-	// Размер иконки
-	let size: IconSize
 }

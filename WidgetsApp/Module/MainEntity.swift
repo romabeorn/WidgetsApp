@@ -13,4 +13,7 @@ struct MainEntity {
 
 	/// Продукты
 	let products: [ProductEntity]
+
+	/// Карточки
+	let cards: [CardButtonEntity]
 }

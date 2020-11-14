@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Элемент карточки
 final class CardButtonItem {
 
 	/// Инициализатор

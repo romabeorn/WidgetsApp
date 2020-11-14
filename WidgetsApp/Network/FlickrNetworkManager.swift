@@ -14,7 +14,7 @@ enum FlickrMethods: String {
 	case photosSearch = "flickr.photos.search"
 }
 
-/// Мэнджер
+/// Мэнеджер
 struct FlickrNetworkManager: NetworkManagerProtocol {
 
 	/// API ключ к Flickr
