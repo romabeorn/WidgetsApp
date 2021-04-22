@@ -47,7 +47,7 @@ final class RootViewController: UIViewController {
 
 	/// Инициализаторы RootViewController
 	init() {
-		current = SplashViewController()
+		current = WidgetsViewController()
 		super.init(nibName: nil, bundle: nil)
 	}
 

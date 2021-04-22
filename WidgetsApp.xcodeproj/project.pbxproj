@@ -69,6 +69,10 @@
 		E1782D6A2544AC0F004417BC /* FlickrLiveStaticEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D692544AC0F004417BC /* FlickrLiveStaticEndpoint.swift */; };
 		E1782D6D2544B214004417BC /* FlickrLiveStaticNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D6C2544B214004417BC /* FlickrLiveStaticNetworkManager.swift */; };
 		E1782D742544B247004417BC /* FlickrLiveStaticNetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1782D732544B247004417BC /* FlickrLiveStaticNetworkManagerProtocol.swift */; };
+		E18C49B32631AFF200D859E8 /* WidgetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C49B22631AFF200D859E8 /* WidgetsViewController.swift */; };
+		E18C49B72631B11C00D859E8 /* ChartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C49B62631B11C00D859E8 /* ChartItem.swift */; };
+		E18C49BF2631B1DD00D859E8 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C49BE2631B1DD00D859E8 /* ChartCell.swift */; };
+		E18C49C32631B5F800D859E8 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C49C22631B5F800D859E8 /* ChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +140,10 @@
 		E1782D692544AC0F004417BC /* FlickrLiveStaticEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrLiveStaticEndpoint.swift; sourceTree = "<group>"; };
 		E1782D6C2544B214004417BC /* FlickrLiveStaticNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrLiveStaticNetworkManager.swift; sourceTree = "<group>"; };
 		E1782D732544B247004417BC /* FlickrLiveStaticNetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrLiveStaticNetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		E18C49B22631AFF200D859E8 /* WidgetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsViewController.swift; sourceTree = "<group>"; };
+		E18C49B62631B11C00D859E8 /* ChartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartItem.swift; sourceTree = "<group>"; };
+		E18C49BE2631B1DD00D859E8 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		E18C49C22631B5F800D859E8 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +199,7 @@
 		587F887E252F85F8005EF786 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				E18C49B12631AFDB00D859E8 /* DS */,
 				E13ABAE92540DB270075797E /* Main */,
 				587F8863252F85CC005EF786 /* LoginViewController.swift */,
 				587F8864252F85CC005EF786 /* RootViewController.swift */,
@@ -210,6 +219,7 @@
 		587F8882252F866B005EF786 /* Molecules */ = {
 			isa = PBXGroup;
 			children = (
+				E18C49B52631B10800D859E8 /* Chart */,
 				9FDD21E2253AF97F008C4165 /* Plain */,
 				58F18695252FC85E003C4962 /* Button */,
 				58F1868D252F9682003C4962 /* Image */,
@@ -486,6 +496,32 @@
 			name = Flickr;
 			sourceTree = "<group>";
 		};
+		E18C49B12631AFDB00D859E8 /* DS */ = {
+			isa = PBXGroup;
+			children = (
+				E18C49B22631AFF200D859E8 /* WidgetsViewController.swift */,
+			);
+			name = DS;
+			sourceTree = "<group>";
+		};
+		E18C49B52631B10800D859E8 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				E18C49C12631B5E900D859E8 /* SubViews */,
+				E18C49B62631B11C00D859E8 /* ChartItem.swift */,
+				E18C49BE2631B1DD00D859E8 /* ChartCell.swift */,
+			);
+			name = Chart;
+			sourceTree = "<group>";
+		};
+		E18C49C12631B5E900D859E8 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				E18C49C22631B5F800D859E8 /* ChartView.swift */,
+			);
+			name = SubViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -600,6 +636,7 @@
 				E15135FA25419CC800366024 /* MainRouter.swift in Sources */,
 				E151360525419F4200366024 /* ProductEntity.swift in Sources */,
 				E1782D662544A845004417BC /* FlickrNetworkManagerProtocol.swift in Sources */,
+				E18C49B32631AFF200D859E8 /* WidgetsViewController.swift in Sources */,
 				587F886B252F85CC005EF786 /* Typography.swift in Sources */,
 				E1782D4925448DAA004417BC /* FlickrEndpoint.swift in Sources */,
 				E15135FC25419CC800366024 /* MainViewController.swift in Sources */,
@@ -610,6 +647,7 @@
 				587F886C252F85CC005EF786 /* Font.swift in Sources */,
 				E151360025419CC800366024 /* MainEntity.swift in Sources */,
 				E1782D742544B247004417BC /* FlickrLiveStaticNetworkManagerProtocol.swift in Sources */,
+				E18C49C32631B5F800D859E8 /* ChartView.swift in Sources */,
 				E15136152541DB6300366024 /* FlickrModels.swift in Sources */,
 				E15135FE25419CC800366024 /* MainView.swift in Sources */,
 				E151362025447A4F00366024 /* HTTPTask.swift in Sources */,
@@ -619,6 +657,7 @@
 				587F886A252F85CC005EF786 /* FormViewCellProtocol.swift in Sources */,
 				58F1868F252F9693003C4962 /* ImageCell.swift in Sources */,
 				E1782D3A254486F9004417BC /* BodyEncoder.swift in Sources */,
+				E18C49BF2631B1DD00D859E8 /* ChartCell.swift in Sources */,
 				E15135FF25419CC800366024 /* MainModel.swift in Sources */,
 				9FDD21E4253AF9A8008C4165 /* PlainCell.swift in Sources */,
 				E15135F925419CC800366024 /* MainPresenter.swift in Sources */,
@@ -630,6 +669,7 @@
 				587F887B252F85CC005EF786 /* RootViewController.swift in Sources */,
 				587F886D252F85CC005EF786 /* SplashViewController.swift in Sources */,
 				58F18693252FC22A003C4962 /* Button.swift in Sources */,
+				E18C49B72631B11C00D859E8 /* ChartItem.swift in Sources */,
 				E1782D6D2544B214004417BC /* FlickrLiveStaticNetworkManager.swift in Sources */,
 				587F887A252F85CC005EF786 /* LoginViewController.swift in Sources */,
 				E1782D6A2544AC0F004417BC /* FlickrLiveStaticEndpoint.swift in Sources */,
